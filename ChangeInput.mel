@@ -1,0 +1,10 @@
+m1=LoadModel($CurrModel$, format=cntk)
+SetDefaultModel(m1)
+inputNode = InputValue(80)
+SetProperty(inputNode,Feature, true)
+SetInput(featNorm, 0, inputNode)
+Remove(feashift)
+Remove(features)
+SaveModel(m1,$NewModel$, format=cntk)
+Dump(m1,$NewModel$.dump.txt)
+

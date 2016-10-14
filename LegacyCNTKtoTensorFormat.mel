@@ -1,0 +1,6 @@
+m1=LoadModel($CurrModel$, format=cntk_legacy_no_tensorlib)
+SetDefaultModel(m1)
+
+SaveModel(m1,$NewModel$, format=cntk)
+Dump(m1,$NewModel$.dump.txt)
+

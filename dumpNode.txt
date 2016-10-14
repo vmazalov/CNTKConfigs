@@ -1,0 +1,10 @@
+command=Dumpnode
+precision=float
+	
+		Dumpnode=[
+		action=dumpnode
+        modelPath= # full path to the input networkg.se.67
+        outputFile= # full path to the output file
+	]
+	
+

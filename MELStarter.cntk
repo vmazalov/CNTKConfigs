@@ -1,0 +1,8 @@
+# Add softmax to the network
+command = convertModel
+convertModel=[    
+    action=edit
+    CurrModel= # full path to the input network
+    NewModel=# full path to the output network
+    editPath=# full path to the MEL script
+]

@@ -1,0 +1,8 @@
+m1=LoadModel($CurrModel$, format=cntk)
+SetDefaultModel(m1)
+LogSoftMaxNode = LogSoftmax(LSTMoutputW)
+SetInput(ScaledLogLikelihood, 0, LogSoftMaxNode)
+SetInput(ScaledLogLikelihood, 1, logPrior)
+SaveModel(m1,$NewModel$, format=cntk)
+Dump(m1,$NewModel$.dump.txt)
+

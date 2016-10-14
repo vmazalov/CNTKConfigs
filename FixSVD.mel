@@ -1,0 +1,34 @@
+m1=LoadModel($CurrModel$, format=cntk)
+SetDefaultModel(m1)
+
+TimesUX2 = Times(LSTMoutput2.W_ifgo-V, LSTMoutput2.inputx_r)
+TimesUV2 = Times(LSTMoutput2.W_ifgo-U, TimesUX2)
+SetInput(LSTMoutput2.unnamed81, 0, TimesUV2)
+SetInput(LSTMoutput2.unnamed77, 0,  TimesUV2)
+SetInput(LSTMoutput2.g_t_0, 0, TimesUV2)
+
+TimesUX3 = Times(LSTMoutput3.W_ifgo-V, LSTMoutput3.inputx_r)
+TimesUV3 = Times(LSTMoutput3.W_ifgo-U, TimesUX3)
+SetInput(LSTMoutput3.unnamed95, 0, TimesUV3)
+SetInput(LSTMoutput3.unnamed91, 0,  TimesUV3)
+SetInput(LSTMoutput3.g_t_0, 0, TimesUV3)
+
+TimesUX4 = Times(LSTMoutput4.W_ifgo-V, LSTMoutput4.inputx_r)
+TimesUV4 = Times(LSTMoutput4.W_ifgo-U, TimesUX4)
+SetInput(LSTMoutput4.unnamed109, 0, TimesUV4)
+SetInput(LSTMoutput4.unnamed105, 0,  TimesUV4)
+SetInput(LSTMoutput4.g_t_0, 0, TimesUV4)
+
+TimesUX5 = Times(W-V, LSTMoutput4.output)
+TimesUV5 = Times(W-U, TimesUX5)
+SetInput(LSTMoutputW, 0, TimesUV5)
+
+SetInput(LSTMoutput2.o_t_0, 0, TimesUV2)
+
+SetInput(LSTMoutput3.o_t_0, 0, TimesUV3)
+
+SetInput(LSTMoutput4.o_t_0, 0, TimesUV4)
+
+SaveModel(m1,$NewModel$, format=cntk)
+Dump(m1,$NewModel$.dump.txt)
+
