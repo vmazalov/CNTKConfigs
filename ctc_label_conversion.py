@@ -54,7 +54,7 @@ def convertMlf(mlfFile, phoneList, output, keys):
                 previous = line.strip()
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Adapts mlf and scp files to use logical keys of smaller length")
+    parser = argparse.ArgumentParser(description="Adapts mlf and scp files to use logical keys of smaller length and converts MLF file to format for CNTK Text reader")
     parser.add_argument('--inputScpFile', help='Input scp file.', required=True)
     parser.add_argument('--inputMlfFile', help='Input mlf file that corresponds to the scp file.', required=True)
     parser.add_argument('--inputPhoneListFile', help='Input file with phone list.', required=True)
