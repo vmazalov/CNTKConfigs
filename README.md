@@ -1,1 +1,1 @@
-Some CNTK model editing commands
+Some generic CNTK model editing, ploting and evaluation commands
